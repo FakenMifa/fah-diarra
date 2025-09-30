@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fah Diarra — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="fd.png">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="logo">F <span>D</span></h1>
+    <nav class="nav">
+      <a href="#about">À propos</a>
+      <a href="#skills">Compétences</a>
+      <a href="#projects">Projets</a>
+      <a href="#videos">Vidéos</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
+    <button class="menu-btn" aria-label="ouvrir le menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+
+  <!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="hero-header">
+        <div class="profile-pic-inline">
+          <img src="images/profile-pic.png" alt="Photo de Fah Diarra">
+        </div>
+        <h2>Bonjour — je suis <strong>Fah Diarra</strong></h2>
+      </div>
+
+      <p>Développeur web full-stack — PHP, JavaScript, HTML, CSS et React JS. 
+         Je crée des interfaces modernes et performantes.</p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn">Voir mes projets</a>
+        <a href="#contact" class="btn ghost">Me contacter</a>
+      </div>
+
+      <!-- stats restent ici -->
+      <ul class="hero-stats-inline">
+        <li>
+          <i class="fa-solid fa-diagram-project"></i>
+          <strong>4+</strong>
+          <span>Projets</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-briefcase"></i>
+          <strong id="experience"></strong>
+          <span>Années d'expérience</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-user-check"></i>
+          <strong>Confiance</strong>
+          <span>Professionnelle</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Modal Profil -->
+<div id="profileModal" class="modal">
+  <div class="modal-content profile-modal-content">
+    <button class="close-profile-modal">&times;</button>
+    <div class="profile-modal-inner">
+      <img src="images/profile-pic.PNG" alt="Photo de Fah Diarra" class="profile-modal-img">
+      <h2>Fah Diarra</h2>
+      <p>Développeur web full-stack, passionné par PHP, JavaScript, React, HTML et CSS. Créatif, motivé, aime travailler en groupe ou en solo selon le projet.</p>
+    </div>
+  </div>
+</div>
+<script>
+
+
+const profilePic = document.querySelector('.profile-pic-inline'); // clic sur la photo
+const profileModal = document.getElementById('profileModal');
+const closeProfileModal = profileModal.querySelector('.close-profile-modal');
+
+// Ouvrir modal
+profilePic.addEventListener('click', () => {
+  profileModal.style.display = 'flex';
+});
+
+// Fermer modal
+closeProfileModal.addEventListener('click', () => {
+  profileModal.style.display = 'none';
+});
+
+// Fermer modal si clic à l'extérieur du contenu
+window.addEventListener('click', e => {
+  if(e.target === profileModal){
+    profileModal.style.display = 'none';
+  }
+});
+
+</script>
+
+
+
+
+  <script>
+    const startYear = 2022;
+
+  // Année actuelle
+  const currentYear = new Date().getFullYear();
+
+  // Calculer l'expérience
+  const experienceYears = currentYear - startYear ; // +1 si tu comptes l'année de départ
+
+  // Mettre à jour le contenu
+  document.getElementById('experience').textContent = experienceYears + '+';
+  </script>
+
+  <!-- About -->
+<section id="about" class="container about">
+  <h3>À propos de moi</h3>
+  <p>
+    Je suis un développeur passionné par la création d'applications web rapides et intuitives. 
+    J’aime concevoir des solutions efficaces côté serveur avec <strong>PHP</strong> et créer des interfaces dynamiques côté client avec 
+    <strong>JavaScript</strong> et <strong>React</strong>, afin de livrer des expériences complètes et agréables.
+  </p>
+
+  <div class="about-extra">
+    <div class="about-col">
+      <h4>Langues</h4>
+      <ul>
+        <li><i class="fa-solid fa-language"></i> Français — Courant</li>
+        <li><i class="fa-solid fa-language"></i> Anglais — Intermédiaire (en apprentissage constant)</li>
+      </ul>
+    </div>
+
+    <div class="about-col">
+      <h4>Qualités professionnelles</h4>
+      <ul>
+        <li><i class="fa-solid fa-bolt"></i> Apprend très vite et s’adapte facilement</li>
+        <li><i class="fa-solid fa-screwdriver-wrench"></i> Autonome, sait aussi travailler en solo</li>
+        <li><i class="fa-solid fa-users"></i> Esprit d’équipe, aime collaborer en groupe</li>
+        <li><i class="fa-solid fa-handshake"></i> Sociable, à l’écoute et ouvert aux collaborations</li>
+        <li><i class="fa-solid fa-lightbulb"></i> Curieux et motivé à découvrir de nouvelles technologies</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- Skills -->
+  <section id="skills" class="container skills">
+    <h3 class="competence-title">Compétences</h3>
+    <div class="skills-grid">
+      <div class="skill"><h4><i class="fa-brands fa-php"></i> PHP</h4><p>Back-end, gestion de bases de données, API RESTful.</p></div>
+      <div class="skill"><h4><i class="fa-brands fa-js"></i> JavaScript</h4><p>DOM, ES6+, tooling, fetch/async.</p></div>
+      <div class="skill"><h4><i class="fa-brands fa-html5"></i> HTML &amp; <i class="fa-brands fa-css3-alt"></i> CSS</h4><p>Structure sémantique, mise en page responsive, animations légères.</p></div>
+      <div class="skill"><h4><i class="fa-brands fa-react"></i> React JS</h4><p>Composants, hooks, state management, SPA.</p></div>
+    </div>
+  </section>
+
+
+
+  
+ <!-- Projects -->
+<section id="projects" class="container projects">
+
+  <h3 class="projet-title-modern">
+  Projets
+  <span class="decoration circle1"></span>
+  <span class="decoration circle2"></span>
+  <span class="decoration line"></span>
+  
+</h3>
+
+
+  <!-- Projet 1 -->
+  <article class="project-row">
+    <div class="project-thumb">
+      <img src="images/projectSite1.png" alt="Aperçu du projet 1">
+    </div>
+    <div class="project-info">
+      <h4>Projet 1 — Gestion de tâches</h4>
+      <p>
+        Une application full-stack permettant de gérer ses tâches au quotidien.
+        Développée avec <strong>PHP (API)</strong> et <strong>React</strong> pour l’interface,
+        avec gestion CRUD, authentification sécurisée et base de données MySQL.
+      </p>
+      <div class="project-actions">
+        <a href="#" class="btnp primary"><i class="fa-solid fa-circle-info"></i> Plus d’infos</a>
+        <a href="#" class="btnp"><i class="fa-brands fa-github"></i> Voir le code</a>
+        <a href="codes/projet1.zip" class="btnp"><i class="fa-solid fa-download"></i> Télécharger</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Projet 2 -->
+  <article class="project-row reverse">
+    <div class="project-thumb">
+      <img src="images/projectSite2.png" alt="Aperçu du projet 2">
+    </div>
+    <div class="project-info">
+      <h4>Projet 2 — Blog dynamique</h4>
+      <p>
+        Un blog moderne construit en <strong>PHP/MySQL</strong> avec un éditeur Markdown intégré,
+        un système de recherche et une gestion complète des articles et utilisateurs.
+      </p>
+      <div class="project-actions">
+        <a href="#" class="btnp primary"><i class="fa-solid fa-circle-info"></i> Plus d’infos</a>
+        <a href="#" class="btnp"><i class="fa-brands fa-github"></i> Voir le code</a>
+        <a href="codes/projet2.zip" class="btnp"><i class="fa-solid fa-download"></i> Télécharger</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Projet 3 -->
+  <article class="project-row">
+    <div class="project-thumb">
+      <img src="images/projectSite3.png" alt="Aperçu du projet 3">
+    </div>
+    <div class="project-info">
+      <h4>Projet 3 — Portfolio interactif</h4>
+      <p>
+        Un site portfolio responsive en <strong>HTML/CSS</strong> avec des composants 
+        <strong>JavaScript</strong> animés pour améliorer l’expérience utilisateur et
+        présenter les projets de façon interactive.
+      </p>
+      <div class="project-actions">
+        <a href="#" class="btnp primary"><i class="fa-solid fa-circle-info"></i> Plus d’infos</a>
+        <a href="#" class="btnp"><i class="fa-brands fa-github"></i> Voir le code</a>
+        <a href="codes/projet3.zip" class="btnp"><i class="fa-solid fa-download"></i> Télécharger</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+
+  <!-- Videos Slider -->
+<section id="videos" class="container videos">
+  <h3>Vidéos de démonstration</h3>
+
+  <div class="video-slider">
+    <button class="slider-btn prev">‹</button>
+    <div class="slider-wrapper">
+
+      <!-- Vidéo 1 -->
+      <div class="video-card" data-description="1" data-video="videos/1.mp4" data-title="Démo 1 — Application de tâches" data-poster="images/poster1.jpg">
+        <img src="images/1.jpeg" alt="Démo 1" class="video-poster">
+        <button class="play-btn">▶</button>
+        <h4>Démo 1 — Application de tâches</h4>
+      </div>
+
+      <!-- Vidéo 2 -->
+      <div class="video-card" data-description="2" data-video="videos/2.mp4" data-title="Démo 2 — Blog interactif" data-poster="images/poster2.jpg">
+        <img src="images/2.jpeg" alt="Démo 2" class="video-poster">
+        <button class="play-btn">▶</button>
+        <h4>Démo 2 — Blog interactif</h4>
+      </div>
+
+      <!-- Vidéo 3 -->
+      <div class="video-card"  data-description="3" data-video="videos/3.mp4" data-title="Démo 3 — Portfolio dynamique" data-poster="images/poster3.jpg">
+        <img src="images/3.jpeg" alt="Démo 3" class="video-poster">
+        <button class="play-btn">▶</button>
+        <h4>Démo 3 — Portfolio dynamique</h4>
+      </div>
+
+      <!-- Vidéo 4 -->
+      <div class="video-card" data-description="4" data-video="videos/4.mp4" data-title="Démo 4 — Interface React" data-poster="images/poster4.jpg">
+        <img src="images/4.jpeg" alt="Démo 4" class="video-poster">
+        <button class="play-btn">▶</button>
+        <h4>Démo 4 — Interface React</h4>
+      </div>
+
+      <!-- Vidéo 5 -->
+      <div class="video-card"  data-description="5" data-video="videos/5.mp4" data-title="Démo 5 — Dashboard PHP" data-poster="images/poster5.jpg">
+        <img src="images/5.jpeg" alt="Démo 5" class="video-poster">
+        <button class="play-btn">▶</button>
+        <h4>Démo 5 — Dashboard PHP</h4>
+      </div>
+
+      <!-- Vidéo 6 -->
+      <div class="video-card" data-description="5" data-video="videos/6.mp4" data-title="Démo 6 — Application mobile" data-poster="images/poster6.jpg">
+        <img src="images/6.jpeg" alt="Démo 6" class="video-poster">
+        <button class="play-btn">▶</button>
+        <h4>Démo 6 — Application mobile</h4>
+      </div>
+
+    </div>
+    <button class="slider-btn next">›</button>
+  </div>
+</section>
+
+
+<!-- Modal vidéo -->
+<div class="video-modal" id="videoModal">
+  <div class="modal-content">
+    <button class="close-modal">✕</button>
+    <h4 class="modal-title"></h4>
+    <img class="modal-poster" src="" alt="">
+
+    <div class="custom-video-player">
+      <video class="modal-video" preload="metadata">
+        <source src="" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+
+      <div class="controls">
+        <button class="play-pause">▶</button>
+
+        <div class="progress-container">
+          <div class="progress">
+            <div class="progress-ball"></div>
+          </div>
+        </div>
+
+        <span class="time">0:00 / 0:00</span>
+
+        <button class="fullscreen-btn">⛶</button>
+
+        <div class="volume-container">
+          <button class="volume-btn">🔊</button>
+          <input type="range" class="volume-slider" min="0" max="1" step="0.05" value="1">
+        </div>
+      </div>
+    </div>
+     <div class="modal-desc"></div>
+  </div>
+</div>
+
+
+
+
+
+</main>
+
+<footer class="site-footer container">
+  <p  >&copy; <span id="currentYear"></span> Fah Diarra — Tous droits réservés</p>
+</footer>
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+
+<!-- Modal Contact -->
+
+<div id="contact-modal" class="modal">
+  <div class="modal-contentform">
+    <span class="close-btn">&times;</span>
+    <h3>Contactez-moi</h3>
+    <p class="contact-note">
+      Je suis disponible pour des collaborations, du débogage de code, la création de sites web modernes 
+      et même des opportunités professionnelles dans votre entreprise. 🚀
+    </p>
+
+    <form class="contact-form" action="#" onsubmit="alert('Ajoute ton backend ou mailto'); return false;">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+
+      <div class="textarea-wrapper">
+        <textarea id="message" name="message" placeholder="Votre message (300 mots max)" rows="3" required></textarea>
+        <span id="word-counter">0 / 300 mots</span>
+      </div>
+
+      <button class="btn" type="submit">Envoyer</button>
+    </form>
+
+    <div class="quick-contacts">
+      <a href="https://wa.me/1234567890" target="_blank" class="contact-btn whatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="tel:+1234567890" class="contact-btn phone">
+        <i class="fas fa-phone"></i> Téléphone
+      </a>
+      <a href="https://t.me/YourTelegramID" target="_blank" class="contact-btn telegram">
+        <i class="fab fa-telegram"></i> Telegram
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+
+
+const menuBtn = document.querySelector('.menu-btn');
+  const nav = document.querySelector('.nav');
+  const navLinks = document.querySelectorAll('.nav a');
+
+  // Toggle menu
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+    menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+  });
+
+  // Ferme le menu et scroll correct
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      if (nav.classList.contains('nav-open')) {
+        nav.classList.remove('nav-open');
+        menuBtn.textContent = '☰';
+      }
+      // Smooth scroll
+      const targetId = link.getAttribute('href').slice(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+
+
+
+
+
+
+  // Modal
+  const modal = document.getElementById("contact-modal");
+  const contactLinks = document.querySelectorAll('a[href="#contact"], .btn.ghost');
+  const closeBtn = document.querySelector(".close-btn");
+  contactLinks.forEach(link => {
+    link.addEventListener("click", e => { e.preventDefault(); modal.style.display = "flex"; });
+  });
+
+
+
+const textarea = document.getElementById("message");
+const counter = document.getElementById("word-counter");
+const maxWords = 300;
+
+textarea.addEventListener("input", () => {
+  // Auto-resize
+  textarea.style.height = "auto";
+  textarea.style.height = textarea.scrollHeight + "px";
+
+  // Compte des mots
+  let words = textarea.value.trim().split(/\s+/).filter(w => w.length > 0);
+  if (words.length > maxWords) {
+    textarea.value = words.slice(0, maxWords).join(" ");
+    words = words.slice(0, maxWords);
+  }
+
+  counter.textContent = `${words.length} / ${maxWords} mots`;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+  window.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
+
+
+
+
+const sliderWrapper = document.querySelector('.slider-wrapper');
+
+document.querySelector('.slider-btn.next').addEventListener('click', () => {
+  sliderWrapper.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
+document.querySelector('.slider-btn.prev').addEventListener('click', () => {
+  sliderWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+
+// Modal video custom
+const videoCards = document.querySelectorAll('.video-card');
+const videoModal = document.getElementById('videoModal');
+const modalVideo = videoModal.querySelector('.modal-video');
+const modalTitle = videoModal.querySelector('.modal-title');
+const modaldesc = videoModal.querySelector('.modal-desc');
+const modalPoster = videoModal.querySelector('.modal-poster');
+
+const playPauseBtn = videoModal.querySelector('.play-pause');
+const fullscreenBtn = videoModal.querySelector('.fullscreen-btn');
+const progressContainer = videoModal.querySelector('.progress-container');
+const progress = videoModal.querySelector('.progress');
+const progressBall = videoModal.querySelector('.progress-ball');
+const volumeSlider = videoModal.querySelector('.volume-slider');
+const volumeBtn = videoModal.querySelector('.volume-btn');
+const closeModal = videoModal.querySelector('.close-modal');
+const timeDisplay = videoModal.querySelector('.time');
+
+let isFullscreen = false;
+
+// Format seconds en mm:ss
+function formatTime(sec){ const minutes = Math.floor(sec/60); const seconds=Math.floor(sec%60); return `${minutes}:${seconds<10?'0':''}${seconds}`; }
+
+// Ouvrir modal et charger vidéo
+videoCards.forEach(card => {
+  const btn = card.querySelector('.play-btn');
+  const initialText = btn.textContent; // stocke le texte initial
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation(); // éviter propagation
+    const videoSrc = card.dataset.video;
+    const title = card.dataset.title;
+    const poster = card.dataset.poster;
+    const desc = card.dataset.description;
+
+    // Change le texte du bouton
+    btn.textContent = "Vidéo en cours de lecture";
+
+    modalVideo.querySelector('source').src = videoSrc;
+    modalVideo.load();
+    modalTitle.textContent = title;
+    modalPoster.src = poster;
+    modaldesc.textContent = desc;
+    videoModal.style.display = "flex";
+
+    modalVideo.addEventListener('loadedmetadata', () => {
+      timeDisplay.textContent = `${formatTime(0)} / ${formatTime(modalVideo.duration)}`;
+      modalVideo.play();
+      playPauseBtn.textContent = '❚❚';
+    }, { once: true });
+
+    // Stocker le bouton actif pour le réinitialiser à la fermeture
+    videoModal.dataset.activeBtn = btn.dataset.index || card.dataset.index || null;
+  });
+});
+
+
+
+
+// Play / Pause
+playPauseBtn.addEventListener('click', ()=>{
+  if(modalVideo.paused){ modalVideo.play(); playPauseBtn.textContent='❚❚'; }
+  else{ modalVideo.pause(); playPauseBtn.textContent='▶'; }
+});
+
+// Progress bar + timer
+modalVideo.addEventListener('timeupdate', ()=>{
+  const percent = (modalVideo.currentTime / modalVideo.duration)*100;
+  progress.style.width = percent + '%';
+  timeDisplay.textContent = `${formatTime(modalVideo.currentTime)} / ${formatTime(modalVideo.duration)}`;
+});
+
+// Video ended
+modalVideo.addEventListener('ended', ()=>{
+  progress.style.width='0%';
+  playPauseBtn.textContent='▶';
+  modalVideo.currentTime=0;
+});
+
+// Click / drag progress
+progressContainer.addEventListener('click', e=>{
+  const rect = progressContainer.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  modalVideo.currentTime = (x / rect.width) * modalVideo.duration;
+});
+progressBall.addEventListener('mousedown', e=>{
+  const rect = progressContainer.getBoundingClientRect();
+  const onMouseMove = event=>{
+    let x = event.clientX - rect.left;
+    x = Math.max(0, Math.min(x, rect.width));
+    modalVideo.currentTime = (x / rect.width) * modalVideo.duration;
+  };
+  document.addEventListener('mousemove', onMouseMove);
+  document.addEventListener('mouseup', ()=>{document.removeEventListener('mousemove', onMouseMove);},{once:true});
+});
+
+
+
+fullscreenBtn.addEventListener('click', () => {
+  if (!isFullscreen) {
+    // Ajouter une classe fullscreen au modal
+    videoModal.classList.add('fullscreen');
+
+    // Mettre en fullscreen la div custom-video-player (optionnel)
+    const playerContainer = modalVideo.parentElement;
+    playerContainer.requestFullscreen?.();
+
+    fullscreenBtn.textContent = '🡽'; // icône pour sortir du fullscreen
+  } else {
+    // Sortir du fullscreen
+    document.exitFullscreen?.();
+    videoModal.classList.remove('fullscreen');
+    fullscreenBtn.textContent = '⛶';
+  }
+  isFullscreen = !isFullscreen;
+});
+
+// Listener pour sortie fullscreen via ESC
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) {
+    videoModal.classList.remove('fullscreen');
+    fullscreenBtn.textContent = '⛶';
+    isFullscreen = false;
+  }
+});
+
+
+// Volume
+volumeSlider.addEventListener('input', ()=>{ modalVideo.volume = volumeSlider.value; });
+volumeBtn.addEventListener('click', ()=>{
+  modalVideo.muted = !modalVideo.muted;
+  volumeBtn.textContent = modalVideo.muted ? '🔇' : '🔊';
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
+  progress.style.width = '0%';
+  playPauseBtn.textContent = '▶';
+  videoModal.style.display = 'none';
+
+  // Réinitialiser le texte du bouton du poster actif
+  videoCards.forEach(card => {
+    const btn = card.querySelector('.play-btn');
+    btn.textContent = '▶'; // ici tu peux mettre initialText si stocké dynamiquement
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
